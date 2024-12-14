@@ -1,0 +1,54 @@
+<!--
+ * @Author: Adam Li adam@bizzone.com
+ * @Date: 2024-12-09 22:44:59
+ * @LastEditors: Adam Li
+ * @LastEditTime: 2024-12-10 12:39:59
+ * @FilePath: /interview/js/Primitive vs Reference/valueAndReference.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+  </head>
+  <script>
+    function changeValue(a) {
+      a = 2;
+    }
+    function changeReference(arr) {
+      arr.push(4);
+    }
+    let a = 1; // basic data type
+    let arr = [1, 2, 3]; // reference data type
+    changeValue(a);
+    changeReference(arr);
+    console.log(a); // 1
+    console.log(arr); // [1, 2, 3, 4]
+
+
+    // basic data type: number, string, boolean, null, undefined, symbol
+    // reference data type: object, array, function
+    // basic data type is passed by value, reference data type is passed by reference
+    // basic data type is immutable, reference data type is mutable
+    // basic data type is stored in stack, reference data type is stored in heap
+    // basic data type is copied by value, reference data type is copied by reference
+    // basic data type is compared by value, reference data type is compared by reference
+    
+    let id1 = Symbol();
+    let id2 = Symbol();
+    console.log(id1 === id2); // false
+    // Symbol is a unique and immutable data type
+    // if add attribute to Symbol, it will throw error
+    
+    // when create Symbol, it can add description
+    let id3 = Symbol('id');
+    console.log(id3.description); // id
+
+    
+  </script>
+  <body></body>
+</html>

@@ -103,6 +103,25 @@ If `dog.speak()` is called:
 
 ---
 
+### Object.prototype
+The base prototype that all objects ultimately inherit from.
+It provides a set of fundamental methods that are inherited by all objects, such as:
+- **hasOwnProperty():** Checks if an object has a specific property as its own property.
+  ```javascript
+    const person = {
+      firstName: "Alice",
+      lastName: "Bob"
+    };
+
+    // 检查person对象是否有"firstName"属性
+    console.log(person.hasOwnProperty("firstName")); // 输出：true
+
+    // 检查person对象是否有"toString"属性（从Object.prototype继承而来）
+    console.log(person.hasOwnProperty("toString")); // 输出：false
+  ```
+- **toString():** Returns a string representation of an object.
+- **valueOf():** Returns the primitive value of an object
+
 ## Important Points
 
 1. **Prototype Inheritance**: Objects inherit properties and methods via their prototypes.  
